@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Index = () => {
-  return <div>Hello React!</div>;
-};
+import { Hello } from "./hello";
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+fetch("/api/").then((response) => {
+  console.log(response.json());
+});
+
+ReactDOM.render(<Hello />, document.getElementById("index"));
