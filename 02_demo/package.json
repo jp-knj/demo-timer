@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node -r esm index.js"
+    "start": "node -r esm index.js",
+    "babel": "babel client -x '.js,.jsx' -d server"
   },
   "devDependencies": {
     "eslint": "^7.26.0",
