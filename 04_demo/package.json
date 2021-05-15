@@ -1,4 +1,12 @@
 {
+  "name": "04_demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "client": "webpack serve --config ./config/webpack.config.js --open --mode development",
+    "build": "webpack --config ./config/webpack.config.js --mode development"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "7",
@@ -12,6 +20,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
 }
