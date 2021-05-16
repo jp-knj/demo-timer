@@ -4,6 +4,6 @@
     "NODE_ENV": "development"
   },
   "watch": ["src"],
-  "ignore": ["tests/**/*.ts"],
-  "exec": "ts-node ./src/index.ts"
+  "ignore": ["test/**/*.ts"],
+  "exec": "ts-node ./src/server/index.ts"
 }
