@@ -16,7 +16,12 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        use: [{ loader: "ts-loader" }],
+        use: [{
+          loader: "ts-loader",
+          options: {
+            configFile: "tsconfig.client.json"
+          }
+        }],
       },
     ],
   },
