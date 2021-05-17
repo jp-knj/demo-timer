@@ -1,13 +1,15 @@
 const path = require('path'); // outputパスに絶対パスを指定するため
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // plugin
 
+const SRC_ROOT = path.join(__dirname, "../client");
+
 module.exports = {
-  entry: path.resolve(__dirname, "../client/src", "index.tsx"), // ビルドを始める際の開始点となるファイルを指定. srcフォルダのindex.tsxを起点としている
+  context: SRC_ROOT,
+  entry: path.resolve(__dirname, "./client", "index.tsx"), // ビルドを始める際の開始点となるファイルを指定. srcフォルダのindex.tsxを起点としている
   output: { // bundleファイルの出力先を指定. distフォルダのbundle.jsに吐き出すようにしている
     path: path.resolve(__dirname, "../dist"),
     filename: "bundle.js",
   },
-  mode: "development", // development or production or nodeの指定が可能. それぞれに最適化されてwebpackが実行される
   module: { // 各種ローダーの設定を行う
     rules: [
       {
