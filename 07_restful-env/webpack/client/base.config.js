@@ -1,28 +1,28 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const SRC_ROOT = path.join(__dirname, "../client");
 
 module.exports = {
-  mode: "development",
-  entry: "./client/index.tsx",
+  context: SRC_ROOT,
+  entry: path.resolve("client", "index.tsx"),
   output: {
-    path: path.resolve(__dirname, "dist/"),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "public"),
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx",],
   },
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        use: ["ts-loader"],
-        exclude: /node_modules/,
+        use: [{ loader: "ts-loader" }],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "../../public/index.html",
     }),
   ],
-  devServer: {
-    contentBase: "./dist",
-    hot: true,
-  },
 };
