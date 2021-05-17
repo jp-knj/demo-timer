@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "client": "webpack serve --open --config ./webpack/client/dev.config.js",
-    "server": "webpack --config ./webpack/server/prod.config.js",
+    "server": "webpack --config ./webpack/server/dev.config.js",
     "start": "concurrently \"yarn run server\" \"yarn run client\"",
     "dev": "nodemon -L"
   },

@@ -2,9 +2,9 @@ const path = require('path'); // outputパスに絶対パスを指定するた�
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // plugin
 
 module.exports = {
-  entry: path.resolve(__dirname, "client/src", "index.tsx"), // ビルドを始める際の開始点となるファイルを指定. srcフォルダのindex.tsxを起点としている
+  entry: path.resolve(__dirname, "../client/src", "index.tsx"), // ビルドを始める際の開始点となるファイルを指定. srcフォルダのindex.tsxを起点としている
   output: { // bundleファイルの出力先を指定. distフォルダのbundle.jsに吐き出すようにしている
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "bundle.js",
   },
   mode: "development", // development or production or nodeの指定が可能. それぞれに最適化されてwebpackが実行される
@@ -19,7 +19,7 @@ module.exports = {
   },
   plugins: [ // ビルドする前の変換処理にタスクを追加する
     new HtmlWebpackPlugin({ // webpackバンドルに対応するhtmlを自動生成するプラグイン
-      template: path.resolve(__dirname, "./client/public/index.html"),
+      template: path.resolve(__dirname, "../client/public/index.html"),
     }),
   ],
   resolve: { // .jsxを解決できるようにする

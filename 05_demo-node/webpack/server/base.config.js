@@ -3,11 +3,11 @@ const nodeExternals = require("webpack-node-externals");
 const path = require("path");
 
 const BUILD_ROOT = path.join(__dirname, "../../dist");
-const SRC_ROOT = path.join(__dirname, "../src/server");
+const SRC_ROOT = path.join(__dirname, "../server");
 
 module.exports = {
   context: SRC_ROOT,
-  entry: path.resolve("src/server", "index.ts"),
+  entry: path.resolve("server", "index.ts"),
   externals: [nodeExternals()],
   output: {
     filename: "server.js",
@@ -28,7 +28,7 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js", ".json"],
     alias: {
-      "@": path.join(__dirname, "/src/server/")
+      "@": path.join(__dirname, "server/")
     }
   }
 };

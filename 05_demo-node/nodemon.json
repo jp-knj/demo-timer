@@ -5,5 +5,5 @@
   },
   "watch": ["src"],
   "ignore": ["test/**/*.ts"],
-  "exec": "ts-node ./src/server/index.ts"
+  "exec": "ts-node ./server/index.ts"
 }
